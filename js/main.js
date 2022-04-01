@@ -38,7 +38,7 @@ let randomLevel = levels[Math.floor(Math.random() * levels.length)];
 // //for each tries inner HTML to the live-counter div
 let triesCounter = document.getElementById("live-counter");
 for (let i = 0; i < randomLevel.tries; i++) {
-    triesCounter.innerHTML += `<img src="assets/img/lives-shape.png" alt="live">`;
+    triesCounter.innerHTML += `<img src="images/lives-shape.png" alt="live">`;
 }
 
 
@@ -98,3 +98,7 @@ for (let i = 0; i < tileButtons.length; i++) {
         }
     });
 }
+
+//add the maxnumber to the id max-number
+document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
+document.getElementById("gamelevel").innerHTML = randomLevel.level;

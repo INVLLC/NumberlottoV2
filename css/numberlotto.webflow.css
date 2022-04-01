@@ -19,7 +19,6 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
   max-width: 479px;
   margin-right: auto;
   margin-left: auto;
@@ -31,6 +30,7 @@ h1 {
   border-style: solid;
   border-width: 2px;
   border-color: #fff;
+  padding-bottom: 4em;
 }
 
 .number-select {
@@ -39,7 +39,9 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 42px;
+  width: 214px;
+  height: 245px;
+  margin: 0 auto;
 }
 
 .image {
@@ -55,7 +57,6 @@ h1 {
   top: 0%;
   right: 0%;
   bottom: 0%;
-  margin-top: 67px;
   margin-right: auto;
   margin-left: auto;
   font-family: Nunito, sans-serif;
@@ -67,19 +68,21 @@ h1 {
 
 .level-indicator {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: -10%;
+  top: 14%;
   right: auto;
   bottom: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 76px;
-  margin-left: 110px;
+  width: 216px;
+  height: 124px;
+  align-items: baseline;
+
 }
 
-.heading-2 {
+.level-box-title {
   position: static;
   left: 0%;
   top: 0%;
@@ -100,8 +103,8 @@ h1 {
   text-align: center;
 }
 
-.paragraph {
-  margin-bottom: -7px;
+.level-box-text {
+  margin-bottom: -8px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -111,10 +114,10 @@ h1 {
   font-weight: 900;
 }
 
-.level-indicator-text {
+.level-indicator-box {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: -77%;
+  top: -56%;
   right: 0%;
   bottom: 0%;
   display: -webkit-box;
@@ -217,6 +220,8 @@ h1 {
   border-radius: 10px;
   background-image: -webkit-gradient(linear, left top, right top, from(#f2709c), to(#ff9472));
   background-image: linear-gradient(90deg, #f2709c, #ff9472);
+  color: #fff;
+  font-weight: bold;
 }
 
 .number-span {
@@ -233,9 +238,6 @@ h1 {
     padding-top: 30px;
   }
 
-  .number-selected {
-    margin-top: 54px;
-  }
 
   .level-indicator {
     margin-left: 14%;
@@ -249,6 +251,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito variablefont wght';
   src: url('../fonts/Nunito-VariableFont_wght.ttf') format('truetype');
@@ -256,6 +259,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Light.ttf') format('truetype');
@@ -263,6 +267,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Medium.ttf') format('truetype');
@@ -270,6 +275,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-LightItalic.ttf') format('truetype');
@@ -277,6 +283,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-MediumItalic.ttf') format('truetype');
@@ -284,6 +291,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Black.ttf') format('truetype');
@@ -291,6 +299,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Regular.ttf') format('truetype');
@@ -298,6 +307,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-BlackItalic.ttf') format('truetype');
@@ -305,6 +315,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Bold.ttf') format('truetype'), url('../fonts/Nunito-ExtraBold.ttf') format('truetype');
@@ -312,6 +323,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-BoldItalic.ttf') format('truetype'), url('../fonts/Nunito-ExtraBoldItalic.ttf') format('truetype');
@@ -319,6 +331,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-ExtraLightItalic.ttf') format('truetype');
@@ -326,6 +339,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-Italic.ttf') format('truetype');
@@ -333,6 +347,7 @@ h1 {
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
@@ -340,6 +355,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-ExtraLight.ttf') format('truetype');
@@ -347,6 +363,7 @@ h1 {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/Nunito-SemiBoldItalic.ttf') format('truetype');
