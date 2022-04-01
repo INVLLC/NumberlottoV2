@@ -2,7 +2,7 @@
   background-color: #3e3e3e;
   background-image: url('../images/background-full.png');
   background-position: 0px 0px;
-  background-size: auto;
+  background-size: contain;
 }
 
 h1 {

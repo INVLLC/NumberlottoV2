@@ -83,8 +83,10 @@ for (let i = 0; i < tileButtons.length; i++) {
             //minus one from the randomLevel.tries
             randomLevel.tries--;
             //remove the tries img from the live counter
-            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="assets/img/lives-shape.png" alt="live">`, ""); 
+            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, ""); 
             
+
+            console.log(randomLevel.tries)
             //add a disable to the button
             this.disabled = true;
 
@@ -99,6 +101,15 @@ for (let i = 0; i < tileButtons.length; i++) {
         }
     });
 }
+
+// when i click the mute button mute the audio
+let muteButton = document.getElementById("mute");
+muteButton.addEventListener("click", function () {
+    let audio = document.getElementById("bg-music");
+    audio.muted = true;
+    
+});
+
 
 //add the maxnumber to the id max-number
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
