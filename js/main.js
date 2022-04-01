@@ -72,7 +72,8 @@ for (let i = 0; i < tileButtons.length; i++) {
         console.log(this.value);
 
         //when you click on a button change the class to number-box-striked
-        this.classList.add("number-box-striked");
+        this.style.backgroundImage = "linear-gradient(90deg, #000, #000)";
+        this.style.textDecoration = "line-through";
 
         //if the value of the button is equal to the selected number alert you win
         if (this.value == selectedNumber) {
