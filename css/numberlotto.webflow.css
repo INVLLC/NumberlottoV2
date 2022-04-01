@@ -233,16 +233,7 @@ h1 {
   text-align: center;
 }
 
-@media screen and (max-width: 479px) {
-  .number-select {
-    padding-top: 30px;
-  }
 
-
-  .level-indicator {
-    margin-left: 14%;
-  }
-}
 
 @font-face {
   font-family: 'Nunito variablefont wght';
