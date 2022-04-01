@@ -58,7 +58,7 @@ for (let i = 0; i < tileGeneratorSize; i++) {
 
     //creat a buttong for each loop
     let tileButton = document.createElement("button");
-    tileButton.classList.add("col-1", "number-box", "mx-1", "my-1");
+    tileButton.classList.add("col", "number-box", "mx-1", "my-1");
     tileButton.setAttribute("id", i +1);
     tileButton.setAttribute("value", i +1);
     tileButton.innerHTML = i+1;
