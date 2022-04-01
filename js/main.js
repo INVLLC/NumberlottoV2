@@ -1,3 +1,21 @@
+// when i click the mute button mute the audio
+let muteButton = document.getElementById("mute");
+let audio = document.getElementById("bg-music");
+muteButton.addEventListener("click", function () {
+   
+    if (audio.muted == false) {
+        audio.muted = true;
+        localStorage.setItem("muted", true);
+
+    } else {
+        audio.muted = false;
+        localStorage.setItem("muted", false);
+
+    }   
+    
+});
+
+
 // level generator
 const level1 = {
     level: 1,
@@ -102,13 +120,7 @@ for (let i = 0; i < tileButtons.length; i++) {
     });
 }
 
-// when i click the mute button mute the audio
-let muteButton = document.getElementById("mute");
-muteButton.addEventListener("click", function () {
-    let audio = document.getElementById("bg-music");
-    audio.muted = true;
-    
-});
+
 
 
 //add the maxnumber to the id max-number
