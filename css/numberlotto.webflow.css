@@ -20,16 +20,18 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
   max-width: 479px;
-  margin-right: auto;
-  margin-left: auto;
+margin: 0 auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-
-  padding-bottom: 4em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .number-select {
@@ -232,6 +234,15 @@ h1 {
   text-align: center;
 }
 
+.audio-controller {
+position: absolute;
+z-index: 99;
+
+}
+
+.audio-controller button {
+  padding: 10px;
+}
 
 
 @font-face {

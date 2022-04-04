@@ -4,7 +4,7 @@ let audio = document.getElementById("bg-music");
 muteButton.addEventListener("click", function () {
    
     if (audio.muted == false) {
-        audio.muted = true;
+        audio.muted = false;
         localStorage.setItem("muted", true);
 
     } else {
@@ -81,6 +81,9 @@ for (let i = 0; i < tileGeneratorSize; i++) {
     tileGeneratorCanvas.appendChild(tileButton);
 }
 
+
+
+
 //addeventlistener to the buttons and console log the value
 let tileButtons = document.querySelectorAll(".number-box");
 for (let i = 0; i < tileButtons.length; i++) {
@@ -92,6 +95,11 @@ for (let i = 0; i < tileButtons.length; i++) {
 
         //if the value of the button is equal to the selected number alert you win
         if (this.value == selectedNumber) {
+
+             //play the winning sound
+             let winningSound = document.getElementById("winning");
+             winningSound.play();
+
             alert("You win!");
             location.reload();
         } else {
@@ -100,6 +108,9 @@ for (let i = 0; i < tileButtons.length; i++) {
             //remove the tries img from the live counter
             triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, ""); 
             
+            //play the bubble sound when click
+            let bubbleSound = document.getElementById("bubble-sound");
+            bubbleSound.play();
 
             //add a disable to the button
             this.disabled = true;
@@ -108,7 +119,12 @@ for (let i = 0; i < tileButtons.length; i++) {
 
         //if tries is equal to 0 alert you lose
         if (randomLevel.tries == 0) {
+
+        
             alert("You lose!");
+           
+
+
 
        //set lost count on localstorage
             let lostCount = localStorage.getItem("lostCount");
@@ -124,10 +140,10 @@ for (let i = 0; i < tileButtons.length; i++) {
     });
 }
 
-console.log("Hello webflow");
+
+
 
 
 //add the maxnumber to the id max-number
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
-
