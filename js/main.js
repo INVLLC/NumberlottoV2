@@ -64,9 +64,7 @@ for (let i = 0; i < randomLevel.tries; i++) {
 let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
 
 
-// Console logs
-console.log(selectedNumber);
-console.log(randomLevel);
+
 
 let tileGeneratorCanvas = document.getElementById("tile-generator")
 let tileGeneratorSize = randomLevel.maxNumber;
@@ -87,7 +85,6 @@ for (let i = 0; i < tileGeneratorSize; i++) {
 let tileButtons = document.querySelectorAll(".number-box");
 for (let i = 0; i < tileButtons.length; i++) {
     tileButtons[i].addEventListener("click", function () {
-        console.log(this.value);
 
         //when you click on a button change the class to number-box-striked
         this.style.backgroundImage = "linear-gradient(90deg, #000, #000)";
@@ -104,7 +101,6 @@ for (let i = 0; i < tileButtons.length; i++) {
             triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, ""); 
             
 
-            console.log(randomLevel.tries)
             //add a disable to the button
             this.disabled = true;
 
@@ -114,15 +110,24 @@ for (let i = 0; i < tileButtons.length; i++) {
         if (randomLevel.tries == 0) {
             alert("You lose!");
 
+       //set lost count on localstorage
+            let lostCount = localStorage.getItem("lostCount");
+            if (lostCount == null) {
+                lostCount = 1;
+            } else {
+                lostCount++;
+            }
+
             //reload page
             location.reload();
         }
     });
 }
 
-
+console.log("Hello webflow");
 
 
 //add the maxnumber to the id max-number
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
+
