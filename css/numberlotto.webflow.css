@@ -20,7 +20,7 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+
   max-width: 479px;
 margin: 0 auto;
   -webkit-box-orient: vertical;
@@ -32,6 +32,7 @@ margin: 0 auto;
   border-width: 2px;
   border-color: #fff;
   background-color: rgba(0, 0, 0, 0.75);
+  padding-bottom: 10px;
 }
 
 .number-select {
