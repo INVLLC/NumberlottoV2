@@ -121,7 +121,7 @@ for (let i = 0; i < tileButtons.length; i++) {
         if (randomLevel.tries == 0) {
 
         
-            alert("You lose!");
+            alert("You lose!"+ " The number was " + selectedNumber);
            
 
 
