@@ -106,6 +106,7 @@ for (let i = 0; i < tileButtons.length; i++) {
             //minus one from the randomLevel.tries
             randomLevel.tries--;
             //remove the tries img from the live counter
+            triesCounter.classList.remove("live-img");
             triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, ""); 
             
             //play the bubble sound when click

@@ -16,13 +16,9 @@ h1 {
 
 
 .wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-
   max-width: 479px;
-margin: 0 auto;
+  margin: 0 auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -33,6 +29,11 @@ margin: 0 auto;
   border-color: #fff;
   background-color: rgba(0, 0, 0, 0.75);
   padding-bottom: 10px;
+ 
+}
+
+.hidden {
+  display: none;
 }
 
 .number-select {
@@ -236,8 +237,8 @@ margin: 0 auto;
 }
 
 .audio-controller {
-position: absolute;
-z-index: 99;
+  position: absolute;
+  z-index: 99;
 
 }
 
