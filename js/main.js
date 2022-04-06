@@ -214,7 +214,6 @@ if (isNaN(ratioPercentage)) {
 
 
 
-console.log(selectedNumber);
 //add the maxnumber to the id max-number
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
