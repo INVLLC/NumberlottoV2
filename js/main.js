@@ -2,11 +2,22 @@
 let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
 
+//add a default values to the locals storage WIN and LOSE of 0
+if (localStorage.getItem("Win") === null) {
+    localStorage.setItem("Win", 0);
+}
+if (localStorage.getItem("Lost") === null) {
+    localStorage.setItem("Lost", 0);
+}
+
+
+
+
 if (localStorage.getItem('muted') === 'true') {
 
     audio.muted = true;
     muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
-   
+
 } else {
     audio.muted = false;
     muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
@@ -192,8 +203,13 @@ let ratioWinNumber = parseInt(ratioWin);
 let ratioPercentage = (ratioWinNumber / (ratioLostNumber + ratioWinNumber)) * 100;
 
 let winLostRatio = document.getElementById("win-lost-ratio");
-winLostRatio.innerHTML = `${ratioPercentage.toFixed()}%`;
 
+//if it equals 0 or nan then set it to 0
+if (isNaN(ratioPercentage)) {
+    winLostRatio.innerHTML = `N/A`;
+} else {
+    winLostRatio.innerHTML = `${ratioPercentage.toFixed()}%`;
+}
 
 
 
