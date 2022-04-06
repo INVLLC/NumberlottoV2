@@ -46,31 +46,31 @@ muteButton.addEventListener("click", function () {
 // level generator
 const level1 = {
     level: 1,
-    maxNumber: 20,
+    maxNumber: 10,
     tries: 1,
 
 }
 const level2 = {
     level: 2,
-    maxNumber: 40,
+    maxNumber: 20,
     tries: 2,
 
 }
 const level3 = {
     level: 3,
-    maxNumber: 60,
+    maxNumber: 30,
     tries: 3,
 
 }
 const level4 = {
     level: 4,
-    maxNumber: 80,
+    maxNumber: 40,
     tries: 4,
 
 }
 const level5 = {
     level: 5,
-    maxNumber: 100,
+    maxNumber: 50,
     tries: 5,
 
 }
