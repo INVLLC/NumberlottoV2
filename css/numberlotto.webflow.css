@@ -183,6 +183,11 @@ h1 {
   text-align: center;
 }
 
+.number-selector {
+  height: 400px;
+  overflow-y: scroll;
+}
+
 .number-selector-container {
   display: -ms-grid;
   display: grid;

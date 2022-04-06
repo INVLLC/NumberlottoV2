@@ -64,6 +64,9 @@ for (let i = 0; i < randomLevel.tries; i++) {
 let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
 
 
+//change the number-selected class
+let numberSelectedH1 = document.getElementsByClassName("number-selected")[0];
+
 
 
 let tileGeneratorCanvas = document.getElementById("tile-generator")
@@ -116,6 +119,20 @@ for (let i = 0; i < tileButtons.length; i++) {
             //add a disable to the button
             this.disabled = true;
 
+            //if the value is lower than the selected number console log "lower"
+            if (this.value < selectedNumber) {
+                numberSelectedH1.innerHTML = `↑`;
+                // console.log("lower");
+            } else {
+                //if the value is higher than the selected number console log "higher"
+                numberSelectedH1.innerHTML = `↓`;
+                // console.log("higher");
+            }
+
+
+
+
+
         }
 
         //if tries is equal to 0 alert you lose
@@ -144,7 +161,7 @@ for (let i = 0; i < tileButtons.length; i++) {
 
 
 
-
+console.log(selectedNumber);
 //add the maxnumber to the id max-number
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
