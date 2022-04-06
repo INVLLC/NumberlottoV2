@@ -1,15 +1,32 @@
 // when i click the mute button mute the audio
 let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
+
+if (localStorage.getItem('muted') === 'true') {
+
+    audio.muted = true;
+    muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+   
+} else {
+    audio.muted = false;
+    muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+}
+
 muteButton.addEventListener("click", function () {
 
     //toggle the audio
     if (audio.muted) {
         audio.muted = false;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+
+        localStorage.setItem('muted', false);
+
+
     } else {
         audio.muted = true;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+        localStorage.setItem('muted', true);
+
     }
 
 });
@@ -163,6 +180,20 @@ for (let i = 0; i < tileButtons.length; i++) {
         }
     });
 }
+
+
+//get the value of the lost in the localstorage
+let ratioLost = localStorage.getItem("Lost");
+let ratioWin = localStorage.getItem("Win");
+
+//convert string rationLost into number
+let ratioLostNumber = parseInt(ratioLost);
+let ratioWinNumber = parseInt(ratioWin);
+let ratioPercentage = (ratioWinNumber / (ratioLostNumber + ratioWinNumber)) * 100;
+
+let winLostRatio = document.getElementById("win-lost-ratio");
+winLostRatio.innerHTML = `${ratioPercentage.toFixed()}%`;
+
 
 
 
