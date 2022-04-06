@@ -1,3 +1,8 @@
+if(navigator.userAgent.match(/Android/i)){
+    window.scrollTo(0,1);
+ }
+
+ 
 // when i click the mute button mute the audio
 let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
