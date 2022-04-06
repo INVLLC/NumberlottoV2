@@ -28,7 +28,8 @@ h1 {
   border-width: 2px;
   border-color: #fff;
   background-color: rgba(0, 0, 0, 0.75);
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
+  height: 100vh;
  
 }
 
@@ -205,7 +206,6 @@ h1 {
 }
 
 .number-selector {
-  height: 400px;
   overflow-y: scroll;
 }
 

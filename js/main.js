@@ -1,18 +1,9 @@
-function hideAddressBar(){
-    if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
-      document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
-    setTimeout(window.scrollTo(1,1),0);
-  }
-  window.addEventListener("load",function(){hideAddressBar();});
-  window.addEventListener("orientationchange",function(){hideAddressBar();});
-
-
 // when i click the mute button mute the audio
 let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
 muteButton.addEventListener("click", function () {
-   
-   //toggle the audio
+
+    //toggle the audio
     if (audio.muted) {
         audio.muted = false;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
@@ -20,7 +11,7 @@ muteButton.addEventListener("click", function () {
         audio.muted = true;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
     }
-    
+
 });
 
 
@@ -86,9 +77,9 @@ for (let i = 0; i < tileGeneratorSize; i++) {
     //creat a buttong for each loop
     let tileButton = document.createElement("button");
     tileButton.classList.add("col", "number-box", "mx-1", "my-1");
-    tileButton.setAttribute("id", i +1);
-    tileButton.setAttribute("value", i +1);
-    tileButton.innerHTML = i+1;
+    tileButton.setAttribute("id", i + 1);
+    tileButton.setAttribute("value", i + 1);
+    tileButton.innerHTML = i + 1;
     tileGeneratorCanvas.appendChild(tileButton);
 }
 
@@ -107,15 +98,15 @@ for (let i = 0; i < tileButtons.length; i++) {
         //if the value of the button is equal to the selected number alert you win
         if (this.value == selectedNumber) {
 
-             //play the winning sound
-             let winningSound = document.getElementById("winning");
-             winningSound.play();
+            //play the winning sound
+            let winningSound = document.getElementById("winning");
+            winningSound.play();
 
 
-             //update win in the local storage
-                let win = localStorage.getItem("Win");
-                win++;
-                localStorage.setItem("Win", win);
+            //update win in the local storage
+            let win = localStorage.getItem("Win");
+            win++;
+            localStorage.setItem("Win", win);
 
 
             alert("You win!");
@@ -125,8 +116,8 @@ for (let i = 0; i < tileButtons.length; i++) {
             randomLevel.tries--;
             //remove the tries img from the live counter
             triesCounter.classList.remove("live-img");
-            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, ""); 
-            
+            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, "");
+
             //play the bubble sound when click
             let bubbleSound = document.getElementById("bubble-sound");
             bubbleSound.play();
@@ -144,7 +135,7 @@ for (let i = 0; i < tileButtons.length; i++) {
                 // console.log("higher");
             }
 
-            
+
 
 
 
@@ -155,11 +146,11 @@ for (let i = 0; i < tileButtons.length; i++) {
         //if tries is equal to 0 alert you lose
         if (randomLevel.tries == 0) {
 
-        //wait3 seconds then say you lose
+            //wait3 seconds then say you lose
 
-            alert("You lose!"+ " The number was " + selectedNumber);
-           
-//update the lost in the localstorage
+            alert("You lose!" + " The number was " + selectedNumber);
+
+            //update the lost in the localstorage
 
             let lost = localStorage.getItem("Lost");
             lost++;
@@ -167,7 +158,7 @@ for (let i = 0; i < tileButtons.length; i++) {
 
 
 
-           location.reload();
+            location.reload();
 
         }
     });
