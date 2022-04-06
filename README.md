@@ -18,20 +18,20 @@ I started the levels a little harder but the users win ration was super low so i
 	- 5, maxNumber: 50, tries: 5
 
 ## To-do
- #####I want to start collecting data on the following:
+ I want to start collecting data on the following:
 - [ ] How many times people win/lose the game?, 
 - [ ] What are the most common numbers people click?
 - [ ] What are the less common numbers people use?
 - [ ] What is the most common selected number by the generator?
 - [ ] On what level do people win the most or the least?
 
-#####There are a couple of design things i want to change like: 
+There are a couple of design things i want to change like: 
 - [ ] Adding a Win or Losing modal instead of the alert()
 - [ ] Create some animation to the live counter and background.
 [![Modal](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20modals.png?raw=true "Modal")](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20modals.png?raw=true "Modal")
 
 ## Game Mock
 #Numberlotto V1
-[:fa-chain: Live Version](http://http://numberlottov2.invisionnaire.com/ "Live Version")
+[Live Version](http://http://numberlottov2.invisionnaire.com/ "Live Version")
 
 [![Mock](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20lotto%20on%20phone%20mock.png?raw=true "Mock")](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20lotto%20on%20phone%20mock.png?raw=true "Mock")
