@@ -61,12 +61,26 @@ h1 {
   left: 0%;
   top: 0%;
   right: 0%;
-  bottom: 0%;
-  margin-right: auto;
-  margin-left: auto;
+  bottom: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0px auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   font-family: Nunito, sans-serif;
   font-size: 200px;
-  line-height: 1;
   font-weight: 900;
   text-align: center;
 }
@@ -80,18 +94,28 @@ h1 {
   padding: 10px;
   border-radius: 100px;
   background-image: linear-gradient(90deg, #f2709c, #ff9472);
-  ;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer; 
+   position: relative;
 }
 
 .menu-button h3 {
-  height: 30px;
-  width: 30px;
+  /* height: 30px;
+  width: 30px; */
   margin: 0;
+  line-height: 1;
+  text-align: center;
+
 }
+
+#easy-mode-off {
+  position: absolute;
+}
+
+
 
 .level-indicator {
   position: absolute;

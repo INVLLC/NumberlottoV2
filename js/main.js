@@ -1,45 +1,82 @@
-// when i click the mute button mute the audio
+//Declarations
 let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
+let easyModeButton = document.getElementById("easy-mode");
+let easyModeSVG = document.getElementById("easy-mode-off");
+let numberSelectedH1 = document.getElementsByClassName("number-selected")[0];
 
-//add a default values to the locals storage WIN and LOSE of 0
+//Adds default values to the localstorage
 if (localStorage.getItem("Win") === null) {
     localStorage.setItem("Win", 0);
 }
 if (localStorage.getItem("Lost") === null) {
     localStorage.setItem("Lost", 0);
 }
+if (localStorage.getItem("Easy Mode") === null) {
+    localStorage.setItem("Easy Mode", false);
+}
 
 
 
-
+//Persisten audio mute
 if (localStorage.getItem('muted') === 'true') {
 
     audio.muted = true;
     muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
 
 } else {
+
     audio.muted = false;
     muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
 }
 
-muteButton.addEventListener("click", function () {
+//Easy-mode toggle & onLoad behavior
 
-    //toggle the audio
+if (localStorage.getItem("Easy Mode") == "true") {
+    
+    easyModeSVG.style.display = "none";
+} else {
+
+    easyModeSVG.style.display = "block";
+    
+}
+
+easyModeButton.addEventListener("click", function () {
+    if (localStorage.getItem("Easy Mode") == "true") {
+       
+        localStorage.setItem("Easy Mode", "false");
+        easyModeSVG.style.display = "block";
+
+        let normalModeSound = document.getElementById("normal-mode-sound");
+        normalModeSound.play();
+
+    } else {
+
+        localStorage.setItem("Easy Mode", "true");
+
+        easyModeSVG.style.display = "none";
+        
+        let easyModeSound = document.getElementById("easy-mode-sound");
+        easyModeSound.play();
+    }
+});
+
+
+//Audio Toggle
+muteButton.addEventListener("click", function () {
     if (audio.muted) {
         audio.muted = false;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
 
         localStorage.setItem('muted', false);
 
-
     } else {
+
         audio.muted = true;
         muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
         localStorage.setItem('muted', true);
 
     }
-
 });
 
 
@@ -75,34 +112,24 @@ const level5 = {
 
 }
 
-// //pick a random level from the array and console log it
+//Level generator
 let levels = [level1, level2, level3, level4, level5];
 let randomLevel = levels[Math.floor(Math.random() * levels.length)];
 
+//Number selector within level
+let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
 
-// //for each tries inner HTML to the live-counter div
+// Live count img genetor
 let triesCounter = document.getElementById("live-counter");
 for (let i = 0; i < randomLevel.tries; i++) {
     triesCounter.innerHTML += `<img src="images/lives-shape.png" alt="live">`;
 }
 
-
-// // pick a number in the range of the level
-let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
-
-
-//change the number-selected class
-let numberSelectedH1 = document.getElementsByClassName("number-selected")[0];
-
-
-
+// Canvas & button generator
 let tileGeneratorCanvas = document.getElementById("tile-generator")
 let tileGeneratorSize = randomLevel.maxNumber;
 
-//for loop for the number of tiles
 for (let i = 0; i < tileGeneratorSize; i++) {
-
-    //creat a buttong for each loop
     let tileButton = document.createElement("button");
     tileButton.classList.add("col", "number-box", "mx-1", "my-1");
     tileButton.setAttribute("id", i + 1);
@@ -111,81 +138,113 @@ for (let i = 0; i < tileGeneratorSize; i++) {
     tileGeneratorCanvas.appendChild(tileButton);
 }
 
-
-
-
-//addeventlistener to the buttons and console log the value
+//Buttons event listeners
 let tileButtons = document.querySelectorAll(".number-box");
 for (let i = 0; i < tileButtons.length; i++) {
     tileButtons[i].addEventListener("click", function () {
 
-        //when you click on a button change the class to number-box-striked
+        //onClick change button class to number-box-striked
         this.style.backgroundImage = "linear-gradient(90deg, #000, #000)";
         this.style.textDecoration = "line-through";
 
-        //if the value of the button is equal to the selected number alert you win
+        //Winning condition
         if (this.value == selectedNumber) {
 
-            //play the winning sound
+            //Play sound
             let winningSound = document.getElementById("winning");
             winningSound.play();
 
-
-            //update win in the local storage
+            //Update localStorage
             let win = localStorage.getItem("Win");
             win++;
             localStorage.setItem("Win", win);
 
-
+            //Alert player
             alert("You win!");
             location.reload();
+
         } else {
-            //minus one from the randomLevel.tries
+
+            //Easy mode === true
+            if (localStorage.getItem("Easy Mode") == "true") {
+              
+                //Highlight ALL buttons except 5 up and down from selectedNumber
+                for (let i = 0; i < tileButtons.length; i++) {
+                    if (i < selectedNumber - 5 || i > selectedNumber + 5) {
+                        tileButtons[i].style.backgroundImage = "linear-gradient(90deg, #000, #000)";
+                        tileButtons[i].style.textDecoration = "line-through";
+                    }
+                }
+                
+
+            
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // let nextValue = document.getElementById(this.value + selectedNumber + 1);
+                // nextValue.style.border = "2px solid red";
+
+
+
+
+
+            }
+
+            //Remove live counter imgage
             randomLevel.tries--;
-            //remove the tries img from the live counter
             triesCounter.classList.remove("live-img");
             triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, "");
 
-            //play the bubble sound when click
+            //Play sound
             let bubbleSound = document.getElementById("bubble-sound");
             bubbleSound.play();
 
-            //add a disable to the button
+            //Disable button
             this.disabled = true;
 
-            //if the value is lower than the selected number console log "lower"
+            //Player hint
             if (this.value < selectedNumber) {
-                numberSelectedH1.innerHTML = `↑`;
-                // console.log("lower");
+
+                numberSelectedH1.innerHTML = `Higher`;
+                numberSelectedH1.style.fontSize = "3rem";
+
             } else {
-                //if the value is higher than the selected number console log "higher"
-                numberSelectedH1.innerHTML = `↓`;
-                // console.log("higher");
+
+                numberSelectedH1.innerHTML = `Lower`;
+                numberSelectedH1.style.fontSize = "3rem";
+
             }
-
-
-
-
-
-
-
         }
 
-        //if tries is equal to 0 alert you lose
+        //Losing condition
         if (randomLevel.tries == 0) {
-
-            //wait3 seconds then say you lose
 
             alert("You lose!" + " The number was " + selectedNumber);
 
-            //update the lost in the localstorage
+            //Update localStorage
 
             let lost = localStorage.getItem("Lost");
             lost++;
             localStorage.setItem("Lost", lost);
 
-
-
+            //Reload Game
             location.reload();
 
         }
@@ -193,27 +252,27 @@ for (let i = 0; i < tileButtons.length; i++) {
 }
 
 
-//get the value of the lost in the localstorage
+//Check localStorage for W/L values
 let ratioLost = localStorage.getItem("Lost");
 let ratioWin = localStorage.getItem("Win");
 
-//convert string rationLost into number
+//Convert into number and display a ration %
 let ratioLostNumber = parseInt(ratioLost);
 let ratioWinNumber = parseInt(ratioWin);
 let ratioPercentage = (ratioWinNumber / (ratioLostNumber + ratioWinNumber)) * 100;
 
 let winLostRatio = document.getElementById("win-lost-ratio");
 
-//if it equals 0 or nan then set it to 0
+//Ratio error handling
 if (isNaN(ratioPercentage)) {
     winLostRatio.innerHTML = `N/A`;
 } else {
     winLostRatio.innerHTML = `${ratioPercentage.toFixed()}%`;
 }
 
-
-
-
-//add the maxnumber to the id max-number
+//Print game level and max number to screen
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
+
+console.log(selectedNumber)
+
