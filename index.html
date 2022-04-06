@@ -20,18 +20,22 @@
     }(window, document);
   </script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body class="body">
 
   <div class="main wf-section">
-    <div class="wrapper" style="margin-top: 20px;">
+    <div class="wrapper">
       <div class="audio-controller">
-        <button id="mute">Muted</button>
-        <audio id="bg-music" src="bg-song.mp4" muted autoplay></audio>
-        <audio id="bubble-sound" src="bubble_iMw0wu6.mp3"></audio>
-        <audio id="winning" src="ding-sound-effect_1.mp3"></audio>
-
+        <div class="menu-button">
+          <h3 id="mute"><i class="fa-solid fa-volume-high"></i></h3>
+          
+          <audio id="bg-music" src="bg-song.mp4" muted autoplay></audio>
+          <audio id="bubble-sound" src="bubble_iMw0wu6.mp3"></audio>
+          <audio id="winning" src="ding-sound-effect_1.mp3"></audio>
+        </div>
+          
       </div>
       <div class="number-select"><img src="images/main-shape.png" loading="lazy" class="image">
         <h1 class="number-selected">?</h1>

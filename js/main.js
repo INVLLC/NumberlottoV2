@@ -3,15 +3,14 @@ let muteButton = document.getElementById("mute");
 let audio = document.getElementById("bg-music");
 muteButton.addEventListener("click", function () {
    
-    if (audio.muted == false) {
+   //toggle the audio
+    if (audio.muted) {
         audio.muted = false;
-        localStorage.setItem("muted", true);
-
+        muteButton.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
     } else {
-        audio.muted = false;
-        localStorage.setItem("muted", false);
-
-    }   
+        audio.muted = true;
+        muteButton.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+    }
     
 });
 
@@ -103,6 +102,13 @@ for (let i = 0; i < tileButtons.length; i++) {
              let winningSound = document.getElementById("winning");
              winningSound.play();
 
+
+             //update win in the local storage
+                let win = localStorage.getItem("Win");
+                win++;
+                localStorage.setItem("Win", win);
+
+
             alert("You win!");
             location.reload();
         } else {
@@ -129,6 +135,8 @@ for (let i = 0; i < tileButtons.length; i++) {
                 // console.log("higher");
             }
 
+            
+
 
 
 
@@ -138,22 +146,20 @@ for (let i = 0; i < tileButtons.length; i++) {
         //if tries is equal to 0 alert you lose
         if (randomLevel.tries == 0) {
 
-        
+        //wait3 seconds then say you lose
+
             alert("You lose!"+ " The number was " + selectedNumber);
            
+//update the lost in the localstorage
+
+            let lost = localStorage.getItem("Lost");
+            lost++;
+            localStorage.setItem("Lost", lost);
 
 
 
-       //set lost count on localstorage
-            let lostCount = localStorage.getItem("lostCount");
-            if (lostCount == null) {
-                lostCount = 1;
-            } else {
-                lostCount++;
-            }
+           location.reload();
 
-            //reload page
-            location.reload();
         }
     });
 }

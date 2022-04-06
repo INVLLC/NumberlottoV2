@@ -69,6 +69,26 @@ h1 {
   text-align: center;
 }
 
+.menu-button {
+  height: 50px;
+  width: 50px;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 100px;
+  background-image: linear-gradient(90deg, #f2709c, #ff9472);;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-button h3 {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+}
+
 .level-indicator {
   position: absolute;
   left: -10%;
