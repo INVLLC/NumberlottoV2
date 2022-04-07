@@ -1,5 +1,5 @@
 # Summary
-NumberLotto is a simple game that I made while learn basic logic in JS and how to do DOM manipulation. I made the design in Webflow and with the help of copilot got some working code to show the world. 
+NumberLotto is a simple game that I made while learning basic logic in JS and how to do DOM manipulation. I made the design in Webflow and with the help of copilot got some working code to show the world. 
 
 ## Levels Breakdown
 I started the levels a little harder but the users win ration was super low so i change them to make the test a little easier.
