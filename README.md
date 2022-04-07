@@ -31,6 +31,6 @@ There are a couple of design things i want to change like:
 [![Modal](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20modals.png?raw=true "Modal")](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20modals.png?raw=true "Modal")
 
 ## Game Mock
-[Live Version](http://http://numberlottov2.invisionnaire.com/ "Live Version")
+[Live Version](https://http://numberlottov2.invisionnaire.com/ "Live Version")
 
 [![Mock](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20lotto%20on%20phone%20mock.png?raw=true "Mock")](https://github.com/INVLLC/NumberlottoV2/blob/main/images/Number%20lotto%20on%20phone%20mock.png?raw=true "Mock")
