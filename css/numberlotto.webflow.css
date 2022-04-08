@@ -98,8 +98,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer; 
-   position: relative;
+  cursor: pointer;
+  position: relative;
 }
 
 .menu-button h3 {
@@ -220,7 +220,7 @@ h1 {
 }
 
 #live-counter img {
-  animation: rotate 2s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 
 
@@ -438,10 +438,8 @@ h1 {
   0% {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(70deg);
-  }
+
   100% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 }
