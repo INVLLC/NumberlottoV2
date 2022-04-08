@@ -122,7 +122,7 @@ let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
 // Live count img genetor
 let triesCounter = document.getElementById("live-counter");
 for (let i = 0; i < randomLevel.tries; i++) {
-    triesCounter.innerHTML += `<img src="images/lives-shape.png" alt="live">`;
+    triesCounter.innerHTML += `<img src="https://uploads-ssl.webflow.com/6247006d96fb7b2b02ef0f13/624705b692824d2089942456_lives-shape.png" alt="live">`;
 }
 
 // Canvas & button generator
@@ -210,7 +210,7 @@ for (let i = 0; i < tileButtons.length; i++) {
             //Remove live counter imgage
             randomLevel.tries--;
             triesCounter.classList.remove("live-img");
-            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="images/lives-shape.png" alt="live">`, "");
+            triesCounter.innerHTML = triesCounter.innerHTML.replace(`<img src="https://uploads-ssl.webflow.com/6247006d96fb7b2b02ef0f13/624705b692824d2089942456_lives-shape.png" alt="live">`, "");
 
             //Play sound
             let bubbleSound = document.getElementById("bubble-sound");
