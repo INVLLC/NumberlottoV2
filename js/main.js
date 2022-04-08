@@ -122,7 +122,7 @@ let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
 // Live count img genetor
 let triesCounter = document.getElementById("live-counter");
 for (let i = 0; i < randomLevel.tries; i++) {
-    triesCounter.innerHTML += `<img src="https://uploads-ssl.webflow.com/6247006d96fb7b2b02ef0f13/624705b692824d2089942456_lives-shape.png" alt="live">`;
+    triesCounter.innerHTML += `<img src="https://uploads-ssl.webflow.com/6247006d96fb7b2b02ef0f13/624705b692824d2089942456_lives-shape.png" alt="live" data-w-id="085f125f-0650-22d0-5f68-1176c1b9bfc6">`;
 }
 
 // Canvas & button generator
