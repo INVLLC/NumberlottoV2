@@ -1,1 +1,1 @@
-console.log('Hello World');
+console.log('this is a console log from VS code through webflow');
