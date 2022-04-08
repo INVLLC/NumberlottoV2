@@ -219,6 +219,11 @@ h1 {
   align-items: center;
 }
 
+#live-counter img {
+  animation: rotate 2s linear infinite;
+}
+
+
 .live-img-box {
   padding-right: 2px;
 }
@@ -425,4 +430,18 @@ h1 {
   font-weight: 600;
   font-style: italic;
   font-display: swap;
+}
+
+
+/* make animation that target the live-counter and maken them rotate */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(70deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
