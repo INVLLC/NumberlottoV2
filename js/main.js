@@ -80,41 +80,36 @@ muteButton.addEventListener("click", function () {
 });
 
 
-// level generator
-const level1 = {
-    level: 1,
-    maxNumber: 10,
-    tries: 1,
-
-}
-const level2 = {
-    level: 2,
-    maxNumber: 20,
-    tries: 2,
-
-}
-const level3 = {
-    level: 3,
-    maxNumber: 30,
-    tries: 3,
-
-}
-const level4 = {
-    level: 4,
-    maxNumber: 40,
-    tries: 4,
-
-}
-const level5 = {
-    level: 5,
-    maxNumber: 50,
-    tries: 5,
-
-}
+const levelTest = [
+    {
+        level: 1,
+        maxNumber: 10,
+        tries: 1,
+    },
+    {
+        level: 2,
+        maxNumber: 20,
+        tries: 2,
+    },
+    {
+        level: 3,
+        maxNumber: 30,
+        tries: 3,
+    },
+    {
+        level: 4,
+        maxNumber: 40,
+        tries: 4,
+    },
+    {
+        level: 5,
+        maxNumber: 50,
+        tries: 5,
+    },
+];
 
 //Level generator
-let levels = [level1, level2, level3, level4, level5];
-let randomLevel = levels[Math.floor(Math.random() * levels.length)];
+let randomLevel = levelTest[Math.floor(Math.random() * levelTest.length)];
 
 //Number selector within level
 let selectedNumber = Math.floor(Math.random() * randomLevel.maxNumber) + 1;
@@ -274,5 +269,7 @@ if (isNaN(ratioPercentage)) {
 document.getElementById("max-number").innerHTML = randomLevel.maxNumber;
 document.getElementById("gamelevel").innerHTML = randomLevel.level;
 
-console.log(selectedNumber)
+
+
+
 
